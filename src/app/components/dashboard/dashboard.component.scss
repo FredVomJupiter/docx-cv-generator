@@ -1,0 +1,26 @@
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+button {
+    background-color: #307e1a;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.credits {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    gap: 0.5rem;
+}
