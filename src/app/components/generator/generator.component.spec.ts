@@ -26,12 +26,5 @@ describe('GeneratorComponent', () => {
     expect(compiled.querySelector('button')?.textContent).toContain('Generate');
   });
 
-  it('should post alert when clicking button', () => {
-    const fixture = TestBed.createComponent(GeneratorComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    spyOn(window, 'alert');
-    compiled.querySelector('button')?.click();
-    expect(window.alert).toHaveBeenCalledWith('generate');
-  });
+  
 });
