@@ -1,16 +1,39 @@
-<div>
+<div class="grid">
 
     <div *ngFor="let exp of this.experiences; index as i" class="display">
-        <button (click)="show(i)" *ngIf="!toggleIndex[i]">show experience</button>
-        <button (click)="show(i)" *ngIf="toggleIndex[i]">hide experience</button>
-        <p [class.hidden]="!toggleIndex[i]">
-            <b>Is current:</b> {{ exp.isCurrent }} <br>
-            <b>Company:</b> {{ exp.company.name }} <br>
-            <b>Job Title:</b> {{ exp.title }} <br>
-            <b>Summary:</b> {{ exp.summary }} <br>
-            <b>Start-End:</b> {{ exp.startDate.month }}.{{ exp.startDate.year }} -
-            {{ exp.endDate?.month }}.{{ exp.endDate?.year }} <br>
-        </p>
+        <button (mouseenter)="show(i)" *ngIf="!toggleIndex[i]">exp {{i + 1}}</button>
+        <button (mouseleave)="show(i)" *ngIf="toggleIndex[i]">exp {{i + 1}}</button>
+
+        <div [class.hidden]="!toggleIndex[i]" class="overlay">
+            <h2>Experience {{i + 1}}</h2>
+            <p>
+                <b>Is current:</b> {{ exp.isCurrent }} <br>
+                <b>Company:</b> {{ exp.company.name }} <br>
+                <b>Job Title:</b> {{ exp.title }} <br>
+                <b>Summary:</b> {{ exp.summary }} <br>
+                <b>Start-End:</b> {{ exp.startDate.month }}.{{ exp.startDate.year }} -
+                {{ exp.endDate?.month }}.{{ exp.endDate?.year }} <br>
+            </p>
+        </div>
+        
+    </div>
+
+    <div *ngFor="let edu of this.education; index as i" class="display">
+        <button (mouseenter)="show(i)" *ngIf="!toggleIndex[i]">edu {{i + 1}}</button>
+        <button (mouseleave)="show(i)" *ngIf="toggleIndex[i]">edu {{i + 1}}</button>
+
+        <div [class.hidden]="!toggleIndex[i]" class="overlay">
+            <h2>Education {{i + 1}}</h2>
+            <p>
+                <b>Institution:</b> {{ edu.schoolName }} <br>
+                <b>Area:</b> {{ edu.fieldOfStudy }} <br>
+                <b>Degree:</b> {{ edu.degree }} <br>
+                <b>Notes:</b> {{ edu.notes }} <br>
+                <b>Start-End:</b> {{ edu.startDate.year }} - {{ edu.endDate.year }}
+            </p>
+        </div>
+        
+        
     </div>
     
 

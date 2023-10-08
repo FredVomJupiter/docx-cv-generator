@@ -12,23 +12,29 @@ export class DisplayComponent implements OnInit {
   public education = education;
   public skills = skills;
   public achievements = achievements;
+  public sum: Object[] = [];
 
   toggleIndex!: boolean[];
-  
+
 
   constructor() { }
 
 
   ngOnInit(): void {
-    this.toggleIndex = experiences.map((experience, index) => false);
-    console.log(this.toggleIndex);
+    this.toggleIndex = experiences.map(() => false);
+    this.toggleIndex.push(...education.map(() => false));
+    this.toggleIndex.push(...skills.map(() => false));
+    this.toggleIndex.push(...achievements.map(() => false));
+    this.sum.push(...experiences);
+    this.sum.push(...education);
+    this.sum.push(...skills);
+    this.sum.push(...achievements);
   }
 
 
   show(index: number) {
-    console.log(index);
+    this.toggleIndex.forEach(() => false);
     if (this.toggleIndex[index] == false) {
-      console.log('true');
       this.toggleIndex[index] = true;
     } else {
       this.toggleIndex[index] = false;

@@ -15,7 +15,8 @@ section {
 
 .border {
     padding: 1rem;
-    width: 400px;
+    max-width: 375px;
+    box-sizing: border-box;
 }
 
 button {

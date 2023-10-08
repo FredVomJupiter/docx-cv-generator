@@ -1,12 +1,9 @@
 <section>
     <div class="grid">
         <div class="border">
-            <h1>Dashboard</h1>
-
-            <button (click)="openMenu()" *ngIf="!toggleMenu">Show me the Button</button>
-            <button (click)="openMenu()" *ngIf="toggleMenu">Hide the Button</button>
+            <h1>Output</h1>
         
-            <router-outlet></router-outlet>
+            <app-generator></app-generator>
         </div>
         
         <div class="border">
@@ -20,6 +17,7 @@
         </div>
 
         <div class="border">
+            <h2>Credits</h2>
 
             <button (click)="openCredits()" *ngIf="!toggleCredits">Show credits</button>
             <button (click)="openCredits()" *ngIf="toggleCredits">Hide credits</button>

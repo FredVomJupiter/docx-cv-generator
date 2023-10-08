@@ -8,22 +8,10 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent {
 
-  toggleMenu: boolean = false;
   toggleData: boolean = false;
   toggleCredits: boolean = false;
 
   constructor(private router: Router) { } 
-
-
-  openMenu() {
-    if (!this.toggleMenu) {
-      this.toggleMenu = true;
-      this.router.navigate(['dashboard/generator']);
-    } else {
-      this.toggleMenu = false;
-      this.router.navigate(['dashboard']);
-    } 
-  }
 
 
   openData() {
