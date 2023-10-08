@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { GeneratorComponent } from './components/generator/generator.component';
 import { GenerateDirective } from './directives/generate.directive';
+import { GenerateCSVDirective } from './directives/generate-csv.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     GeneratorComponent,
-    GenerateDirective
+    GenerateDirective,
+    GenerateCSVDirective
   ],
   imports: [
     BrowserModule,
