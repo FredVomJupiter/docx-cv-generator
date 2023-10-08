@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 export class DashboardComponent {
 
   toggleMenu: boolean = false;
+  toggleData: boolean = false;
+  toggleCredits: boolean = false;
 
   constructor(private router: Router) { } 
 
@@ -20,8 +22,25 @@ export class DashboardComponent {
     } else {
       this.toggleMenu = false;
       this.router.navigate(['dashboard']);
+    } 
+  }
+
+
+  openData() {
+    if (!this.toggleData) {
+      this.toggleData = true;
+    } else {
+      this.toggleData = false;
     }
-    
+  }
+
+
+  openCredits() {
+    if (!this.toggleCredits) {
+      this.toggleCredits = true;
+    } else {
+      this.toggleCredits = false;
+    }
   }
 
 }

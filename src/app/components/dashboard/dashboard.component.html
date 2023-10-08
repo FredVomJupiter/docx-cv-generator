@@ -1,18 +1,39 @@
 <section>
-    <h1>Dashboard</h1>
+    <div class="grid">
+        <div class="border">
+            <h1>Dashboard</h1>
 
-    <button (click)="openMenu()">Show me the Button</button>
+            <button (click)="openMenu()" *ngIf="!toggleMenu">Show me the Button</button>
+            <button (click)="openMenu()" *ngIf="toggleMenu">Hide the Button</button>
+        
+            <router-outlet></router-outlet>
+        </div>
+        
+        <div class="border">
+            <h2>Data</h2>
+    
+            <button (click)="openData()" *ngIf="!toggleData">Show me the Data</button>
+            <button (click)="openData()" *ngIf="toggleData">Hide the Data</button>
+        
+            <app-display [class.hidden]="!toggleData"></app-display>
+        
+        </div>
 
-    <router-outlet></router-outlet>
+        <div class="border">
 
+            <button (click)="openCredits()" *ngIf="!toggleCredits">Show credits</button>
+            <button (click)="openCredits()" *ngIf="toggleCredits">Hide credits</button>
 
-    <div class="credits">
-        <h2>Credits where credits are due</h2>
-        <a target="_blank" href="https://docx.js.org/#/usage/styling-with-js">=> DOCX's good documentation</a>
-        <a target="_blank" href="https://stackblitz.com/edit/angular-docx?file=src%2Fapp%2Fcv-generator.ts">=> Dolan Miu's template on Stackblitz</a>
-        <a target="_blank" href="https://juanjodiaz.github.io/json2csv/#/quick-start">=> juanjodiaz json-csv parser</a>
+            <div [class.credits]="toggleCredits" [class.hidden]="!toggleCredits">
+                <h2>Credits where credits are due</h2>
+                <a target="_blank" href="https://docx.js.org/#/usage/styling-with-js">=> DOCX's good documentation</a>
+                <a target="_blank" href="https://stackblitz.com/edit/angular-docx?file=src%2Fapp%2Fcv-generator.ts">=> Dolan Miu's template on Stackblitz</a>
+                <a target="_blank" href="https://juanjodiaz.github.io/json2csv/#/quick-start">=> juanjodiaz json-csv parser</a>
+
+                <p>Auto-generate a CV based on predefined styling and data.</p>
+            </div>
+        
+        </div>
+        
     </div>
-
-    <p>Auto-generate a CV based on predefined styling and data.</p>
-
 </section>

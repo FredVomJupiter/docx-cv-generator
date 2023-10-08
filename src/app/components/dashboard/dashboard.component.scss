@@ -7,6 +7,17 @@ section {
     width: 100%;
 }
 
+.grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.border {
+    padding: 1rem;
+    width: 400px;
+}
+
 button {
     background-color: #307e1a;
     border: none;
@@ -15,6 +26,10 @@ button {
     font-size: 1rem;
     padding: 0.5rem 1rem;
     transition: all 0.2s ease-in-out;
+}
+
+.hidden {
+    display: none;
 }
 
 .credits {

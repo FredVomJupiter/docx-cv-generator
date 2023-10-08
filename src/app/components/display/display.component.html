@@ -1,0 +1,17 @@
+<div>
+
+    <div *ngFor="let exp of this.experiences; index as i" class="display">
+        <button (click)="show(i)" *ngIf="!toggleIndex[i]">show experience</button>
+        <button (click)="show(i)" *ngIf="toggleIndex[i]">hide experience</button>
+        <p [class.hidden]="!toggleIndex[i]">
+            <b>Is current:</b> {{ exp.isCurrent }} <br>
+            <b>Company:</b> {{ exp.company.name }} <br>
+            <b>Job Title:</b> {{ exp.title }} <br>
+            <b>Summary:</b> {{ exp.summary }} <br>
+            <b>Start-End:</b> {{ exp.startDate.month }}.{{ exp.startDate.year }} -
+            {{ exp.endDate?.month }}.{{ exp.endDate?.year }} <br>
+        </p>
+    </div>
+    
+
+</div>
