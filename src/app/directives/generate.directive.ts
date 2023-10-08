@@ -1,4 +1,4 @@
-import { Directive, Host, HostListener } from '@angular/core';
+import { Directive, HostListener } from '@angular/core';
 import { DocumentCreator } from '../services/generator';
 import { achievements, education, experiences, skills } from '../services/data';
 import { Packer } from "docx";
